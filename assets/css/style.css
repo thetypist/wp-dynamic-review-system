@@ -1,0 +1,100 @@
+/* TITLE & TTILE NOTES */
+.wpdrs-content-wrap { width: 100%; height: auto; display: inline-block; margin-top: 20px; }
+.wpdrs-title-wrap { width: 100%; height: auto; margin-bottom: 10px; }
+.wpdrs-title { color: #1e73be; line-height: 40px !important; margin: 0px !important; border-bottom: 4px solid #1e73be; display: inline-block;}
+.wpdrs-title-note { font-size: 14px; color: #777; }
+.wpdrs-title-sep { width: 100%; border: 1px solid #cfcfcf; margin-top: -1px; }
+.wpdrs-title-wrap .submit-rating-btn { float: right; display: inline-block; height: auto; width: auto; padding: 5px 20px; line-height: 25px; overflow: hidden; background: #1e73be; color: #fff; margin-top: 5px; }
+.wpdrs-title-wrap .submit-rating-btn  a{ color: #fff; text-decoration: none !important; }
+
+/* COMBINED RATING */
+.combined-ratings-wrap { width: 100%; height: auto; display: inline-block; margin-bottom: 20px; }
+.combined-rating-item-row { display: flex; padding: 0; box-sizing: border-box; border-bottom: 1px solid #fafafa;}
+
+.combined-rating-item { height: 35px; width: auto; line-height: 35px; overflow: hidden; padding: 0 15px; box-sizing: border-box; }
+.combined-rating-item.star { padding-right: 0px;}
+.combined-rating-item.name { flex: 1; padding-left: 0px;}
+
+.rating-star-wrap, 
+	.rating-star-hover-wrap, 
+	.rating-star-active-wrap {  height: 35px;  background-position: left top; background-repeat: repeat-x; background-size: 35px; overflow: hidden; }
+.rating-star-wrap { background-image: url('../img/stars.svg#star-empty'); z-index: 1; position: relative; display: inline-block; }
+.rating-star-hover-wrap,
+	.rating-star-active-wrap {background-image: url('../img/stars.svg#star-full'); position: absolute; z-index: 9999;   }
+
+/**
+* Form Rating 
+*/
+.wpdrs-rating-form-wrap .form-row { display: flex; }
+.wpdrs-rating-form-wrap .form-row .label-wrap {flex: 1;}
+.wpdrs-rating-form-wrap .form-row .rating-field-wrap {  text-align: right; } 
+.form-row.feedback { margin: 10px 0; }
+
+/* Ratings Loop */
+.loop-ratings-wrap { display: flex; flex-flow: row wrap; }
+.loop-ratings-wrap .rating-row-wrap { flex: 50%; box-sizing: border-box; }
+.loop-ratings-wrap .rating-row-wrap:nth-child(odd) { padding-right: 15px; }
+
+/* Loop Single */
+.loop-single { width: 100%; height: auto; display: inline-block; }
+.rating-row-wrap { display: flex; }
+.rating-row-wrap .rating-name-wrap,
+	.rating-row-wrap .rating-star-wrap { flex: 1; }
+.loop-single .rating-name-wrap { color: #999; }
+
+.loop-single.feedback-meta { display: flex;  position: relative; }
+.loop-single.feedback-meta span{ flex: 1; display: inline-block; height: 20px;  line-height: 20px; display: flex; }
+.loop-single.feedback-text { margin: 15px 0; width: 100%; height: auto; display: inline-block; color: #777; text-align: justify; }
+
+.feedback-meta span:before{ font-family: FontAwesome; height: 20px; width: 20px; display: inline-block; margin-right: 5px; line-height: 20px; color: #1e73be; font-size: 12px;} 
+span.feedbacker-name:before{ content: "\f2c0"; }
+span.feedback-time:before{ content: "\f133"; }
+
+.loop-single.feedback-meta .feedback-time { justify-content: flex-end; }
+
+
+/* POST FEEDBACK WRAP */
+.post-user-feedback { margin-bottom: 50px; padding-bottom: 10px; border-bottom: 1px solid #ccc; }
+
+/* WPDRS Message Wrap */
+.wpdrs-bottom-wrap { max-height: 100px; width: 100%; background: #000; position: fixed; z-index: 9999; left: 0px; bottom: 0px; padding: 20px; box-sizing: border-box; text-align: center; color: #fff; line-height: 40px; font-size: 20px; }
+.wpdrs-bottom-loading { height: 50px; width: 100%; background: #000; position: fixed; z-index: 9999; left: 0px; bottom: 0px; padding: 20px; box-sizing: border-box; text-align: center; color: #fff; line-height: 40px; font-size: 20px; }
+
+
+/* RATING STARS */
+
+fieldset.wpdrs-rating , .wpdrs-rating label { margin: 0 !important; padding: 0 !important; background: transparent !important;  }
+
+/****** Style Star Rating Widget *****/
+.wpdrs-rating {  border: none; float: left;}
+.wpdrs-rating > input { display: none !important; } 
+.wpdrs-rating > label:before {margin: 0 5px; font-size: 18px; font-family: FontAwesome; display: inline-block; content: "\f005"; }
+.wpdrs-rating > .rating-half:before { content: "\f089"; position: absolute; }
+.wpdrs-rating > label {color: #ddd; float: right; width: auto !important; display: inline-block !important; }
+
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+.wpdrs-rating > input:checked ~ label, /* show gold star when clicked */
+form .wpdrs-rating:not(:checked) > label:hover, /* hover current star */
+form .wpdrs-rating:not(:checked) > label:hover ~ label { color: #FFD700 !important;  } /* hover previous stars in list */
+
+form .wpdrs-rating > input:checked + label:hover, /* hover current star when changing.wpdrs-rating */
+form .wpdrs-rating > input:checked ~ label:hover,
+form .wpdrs-rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+form .wpdrs-rating > input:checked ~ label:hover ~ label { color: #FFD700 !important;  } 
+
+/* FOR MOBILE */
+@media screen and (max-width: 768px){
+	.loop-ratings-wrap .rating-row-wrap{
+		flex: 100%;
+	}
+	.rating-value-wrap{
+		flex: 1;
+	}
+	fieldset.wpdrs-rating{
+		float: right;
+	}
+	.loop-ratings-wrap .rating-row-wrap:nth-child(odd){
+		padding-right: 0px;
+	}
+}

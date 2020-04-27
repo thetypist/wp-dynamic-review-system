@@ -1,0 +1,16 @@
+.wpdrs-admin-wrap { width: 100%; height: auto; display: flex; }
+
+.wpdrs-admin-wrap .left-sidebar { flex: 2; }
+.wpdrs-admin-wrap .primary-content { flex: 5; display: inline-block; padding: 20px; box-sizing: border-box; }
+.wpdrs-admin-wrap .right-sidebar { flex: 2; }
+
+.wpdrs-admin-menu { width: 100%; height: auto; display: inline-block; }
+.wpdrs-admin-menu li { width: 100%; height: auto; list-style: none; display: inline-block; float: none; margin: 0 0 5px; padding: 5px 15px; background-color: #000; box-sizing: border-box; }
+.wpdrs-admin-menu li a { color: #fff; text-decoration: none; }
+
+
+table { width: 100%; }
+table th { text-align: left !important; }
+
+.title { font-size: 20px !important; }
+.subtitle { font-size: 18px !important;  padding: 0px !important; }
